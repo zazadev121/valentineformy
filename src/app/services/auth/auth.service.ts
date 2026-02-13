@@ -24,8 +24,8 @@ export class AuthService {
   // Verify name and authenticate
   authenticate(name: string): boolean {
     const acceptedNames = [
-      'მარი', 'მარიამ', 'მარიამი', 'მარიამო',  // Georgian variations
-      'mary', 'mariam', 'mari', 'maro'          // English variations
+      'მარი', 'მარიამ', 'მარიამი', 'მარიამო', 'მარიამიი', 'მარიამმმ', // Georgian variations
+      'mary', 'mariam', 'mari', 'maro', 'mariami'                    // English variations
     ];
     
     const normalizedName = name.toLowerCase().trim();
