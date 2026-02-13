@@ -43,13 +43,14 @@ export class ValentineQuestionComponent {
     const button = this.noBtn.nativeElement;
     
     // Get viewport dimensions
-    const padding = 100; // Keep away from edges
+    const padding = 50; 
+    const headerHeight = 100; // Keep below fixed navigation
     const maxX = window.innerWidth - button.clientWidth - padding;
     const maxY = window.innerHeight - button.clientHeight - padding;
     
     // Calculate random position within safe area
     const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
-    const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+    const randomY = Math.max(headerHeight, Math.floor(Math.random() * maxY));
     
     this.renderer.setStyle(button, 'position', 'fixed');
     this.renderer.setStyle(button, 'left', `${randomX}px`);

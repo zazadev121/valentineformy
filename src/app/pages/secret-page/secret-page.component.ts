@@ -104,9 +104,10 @@ import { AuthService } from '../../services/auth/auth.service';
       max-width: 700px;
       width: 90%;
       z-index: 10;
-      margin-top: 80px; /* Space for the fixed navigation */
-      overflow-y: auto; /* Allow scrolling content if too long */
+      margin: 80px 15px 20px; /* Space for the fixed navigation and some side/bottom spacing */
+      overflow-y: auto;
       max-height: calc(100vh - 120px);
+      padding: 30px 20px; /* Reduced for mobile */
     }
 
     .locked-state {
