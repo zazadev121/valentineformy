@@ -53,6 +53,10 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
           <span class="icon">🏰</span>
           <span class="text">ჩვენი მომავალი</span>
         </a>
+        <a routerLink="/ai-garden" routerLinkActive="active" (click)="closeMenu()">
+          <span class="icon">🤖</span>
+          <span class="text">AI ბაღი</span>
+        </a>
         <a routerLink="/final" routerLinkActive="active" (click)="closeMenu()">
           <span class="icon">💌</span>
           <span class="text">ბოლო შეტყობინება</span>
@@ -203,16 +207,22 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
         flex-direction: column;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(20px);
-        padding: 20px;
+        padding: 0;
         gap: 15px;
         max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
         overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
         &.show {
-          max-height: 600px;
-          padding: 20px;
+          max-height: 100vh;
+          padding: 30px 20px;
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
         }
 
         a {

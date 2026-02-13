@@ -63,6 +63,11 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
+    path: 'ai-garden',
+    loadComponent: () => import('./pages/ai-page/ai-page.component').then(m => m.AiPageComponent),
+    canActivate: [authGuard]
+  },
+  {
     path: '**',
     redirectTo: ''
   }
