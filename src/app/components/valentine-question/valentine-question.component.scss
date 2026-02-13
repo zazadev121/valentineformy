@@ -7,11 +7,29 @@
   padding: 40px;
   background: linear-gradient(to top, #fff0f3, #ffffff);
 
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 15px;
+  }
+
   .question {
     font-size: 3rem;
     color: var(--accent-color);
     font-family: var(--font-serif);
     margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
   }
 
   .actions {
@@ -19,6 +37,11 @@
     justify-content: center;
     gap: 30px;
     align-items: center;
+
+    @media (max-width: 480px) {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
   }
 
   button {
@@ -30,6 +53,16 @@
     font-family: var(--font-sans);
     transition: transform 0.2s;
     font-weight: bold;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      padding: 12px 30px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+      padding: 10px 25px;
+    }
 
     &:active {
       transform: scale(0.95);
@@ -59,15 +92,39 @@
       font-size: 4rem;
       color: var(--primary-color);
       margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        font-size: 3rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 2.5rem;
+      }
     }
     p {
       font-size: 2rem;
       color: var(--text-color);
+
+      @media (max-width: 768px) {
+        font-size: 1.6rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.3rem;
+      }
     }
     .big-heart {
       font-size: 8rem;
       animation: beat 1s infinite;
       margin-top: 30px;
+
+      @media (max-width: 768px) {
+        font-size: 6rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 4rem;
+      }
     }
   }
 }

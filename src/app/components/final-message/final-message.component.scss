@@ -7,6 +7,10 @@
   background: radial-gradient(circle at center, #fff0f3, #ffccd5);
   padding: 20px;
 
+  @media (max-width: 480px) {
+    padding: 15px;
+  }
+
   .content {
     max-width: 800px;
   }
@@ -16,12 +20,30 @@
     color: var(--accent-color);
     font-family: var(--font-serif);
     margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
   }
 
   .sub-msg {
     font-size: 1.5rem;
     color: var(--text-color);
     margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
   }
 
   .pulse-heart {
@@ -29,6 +51,15 @@
     color: var(--primary-color);
     animation: heartPulse 1.5s infinite;
     margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+      font-size: 4rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
   }
 
   .secret-area {
@@ -44,6 +75,11 @@
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
+
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+      padding: 8px 16px;
+    }
     
     &:hover {
       background: var(--primary-color);
@@ -57,6 +93,14 @@
     color: var(--accent-color);
     font-weight: bold;
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.6rem;
+    }
   }
 }
 

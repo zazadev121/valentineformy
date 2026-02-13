@@ -2,11 +2,29 @@
   padding: 80px 20px;
   text-align: center;
 
+  @media (max-width: 768px) {
+    padding: 60px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 10px;
+  }
+
   .section-title {
     font-size: 2.5rem;
     color: var(--accent-color);
     margin-bottom: 60px;
     font-family: var(--font-serif);
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
   }
 
   .cards-grid {
@@ -14,6 +32,18 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     padding: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 0;
+    }
   }
 
   .reason-card {
@@ -24,6 +54,10 @@
     opacity: 0;
     animation: fadeInScale 0.8s ease-out forwards;
 
+    @media (max-width: 480px) {
+      padding: 30px 15px;
+    }
+
     &:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(255, 77, 109, 0.2);
@@ -33,18 +67,38 @@
       font-size: 2rem;
       margin-bottom: 20px;
       color: var(--primary-color);
+
+      @media (max-width: 480px) {
+        font-size: 1.8rem;
+      }
     }
 
     h3 {
       font-size: 1.5rem;
       margin-bottom: 10px;
       color: var(--text-color);
+
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.2rem;
+      }
     }
 
     p {
       font-size: 1.1rem;
       font-weight: 300;
       color: rgba(89, 13, 34, 0.8);
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.95rem;
+      }
     }
   }
 }

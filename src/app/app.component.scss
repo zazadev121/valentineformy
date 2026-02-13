@@ -5,9 +5,20 @@ main {
 
 .footer {
   text-align: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.4);
-  font-family: var(--font-sans);
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  font-family: var(--font-serif);
   color: var(--text-color);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+
+  @media (max-width: 768px) {
+    padding: 25px;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px;
+    font-size: 1rem;
+  }
 }

@@ -5,6 +5,14 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 15px;
+  }
   
   .content-wrapper {
     max-width: 800px;
@@ -15,6 +23,16 @@
     color: var(--accent-color);
     margin-bottom: 50px;
     font-family: var(--font-serif);
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
   }
 
   .story-text {
@@ -23,6 +41,15 @@
     color: var(--text-color);
     margin-bottom: 30px;
     font-weight: 300;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
   }
 
   .decorator {
@@ -33,16 +60,29 @@
     gap: 20px;
     opacity: 0.6;
 
+    @media (max-width: 480px) {
+      margin-top: 30px;
+      gap: 15px;
+    }
+
     .line {
       width: 100px;
       height: 1px;
       background: var(--primary-color);
+
+      @media (max-width: 480px) {
+        width: 60px;
+      }
     }
 
     .heart-icon {
       font-size: 2rem;
       color: var(--primary-color);
       animation: beat 2s infinite;
+
+      @media (max-width: 480px) {
+        font-size: 1.5rem;
+      }
     }
   }
 }

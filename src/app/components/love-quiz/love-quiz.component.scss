@@ -1,17 +1,43 @@
 .quiz-section {
   padding: 80px 20px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 60px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 10px;
+  }
   
   h2 {
     font-size: 3rem;
     color: var(--accent-color);
     margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
   }
   
   .subtitle {
     font-size: 1.2rem;
     margin-bottom: 40px;
     color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -21,6 +47,14 @@
   padding: 40px;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 15px;
+  }
 }
 
 .progress-bar {
@@ -43,6 +77,16 @@
     font-size: 1.8rem;
     margin-bottom: 30px;
     color: var(--text-color);
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -97,6 +141,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 250px;
+  }
+
+  @media (max-width: 480px) {
+    height: 200px;
+  }
   
   img {
     width: 100%;
@@ -109,6 +161,10 @@
     display: none;
     font-size: 1.2rem;
     color: var(--text-color);
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -125,6 +181,15 @@
   color: var(--primary-color);
   font-weight: bold;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
 }
 
 .next-btn, .restart-btn {
