@@ -213,12 +213,12 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
-        overflow: hidden;
+        overflow-y: auto; /* Enable vertical scroll for many links */
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
         &.show {
-          max-height: 100vh;
+          max-height: calc(100vh - 70px); /* Leave space for top nav */
           padding: 30px 20px;
           opacity: 1;
           visibility: visible;
