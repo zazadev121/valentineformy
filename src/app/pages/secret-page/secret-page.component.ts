@@ -276,6 +276,7 @@ import { AuthService } from '../../services/auth/auth.service';
       pointer-events: none;
 
       .sparkle {
+        @use "sass:math";
         position: absolute;
         width: 4px;
         height: 4px;
@@ -286,9 +287,9 @@ import { AuthService } from '../../services/auth/auth.service';
 
         @for $i from 1 through 10 {
           &:nth-child(#{$i}) {
-            left: random(100) * 1%;
-            top: random(100) * 1%;
-            animation-delay: random(3000) * 0.001s;
+            left: math.random(100) * 1%;
+            top: math.random(100) * 1%;
+            animation-delay: math.random(3000) * 0.001s;
           }
         }
       }

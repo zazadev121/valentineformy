@@ -206,6 +206,7 @@ import { CommonModule } from '@angular/common';
       pointer-events: none;
 
       .warm-heart {
+        @use "sass:math";
         position: absolute;
         font-size: 2.5rem;
         opacity: 0.6;
@@ -215,7 +216,7 @@ import { CommonModule } from '@angular/common';
           &:nth-child(#{$i}) {
             left: #{$i * 12%};
             animation-delay: #{$i * 1.5s};
-            font-size: #{2 + random(10) * 0.1}rem;
+            font-size: #{2 + math.random(10) * 0.1}rem;
           }
         }
       }

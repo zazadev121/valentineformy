@@ -496,6 +496,7 @@ interface DateOption {
       overflow: hidden;
 
       .heart {
+        @use "sass:math";
         position: absolute;
         font-size: 2rem;
         opacity: 0.3;
@@ -507,6 +508,13 @@ interface DateOption {
         &:nth-child(4) { left: 60%; animation-delay: 6s; }
         &:nth-child(5) { left: 75%; animation-delay: 8s; }
         &:nth-child(6) { left: 90%; animation-delay: 10s; }
+        
+        // Addition for variety if more hearts were added or for general safety
+        &:nth-child(n+7) {
+          left: math.random(100) * 1%;
+          animation-delay: math.random(10) * 1s;
+          font-size: #{1.5 + math.random(10) * 0.1}rem;
+        }
       }
     }
 
