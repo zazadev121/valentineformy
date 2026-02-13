@@ -43,17 +43,19 @@ export class ValentineQuestionComponent {
     const button = this.noBtn.nativeElement;
     
     // Get viewport dimensions
-    const maxX = window.innerWidth - button.clientWidth;
-    const maxY = window.innerHeight - button.clientHeight;
+    const padding = 100; // Keep away from edges
+    const maxX = window.innerWidth - button.clientWidth - padding;
+    const maxY = window.innerHeight - button.clientHeight - padding;
     
-    // Calculate random position
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+    // Calculate random position within safe area
+    const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+    const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
     
     this.renderer.setStyle(button, 'position', 'fixed');
     this.renderer.setStyle(button, 'left', `${randomX}px`);
     this.renderer.setStyle(button, 'top', `${randomY}px`);
-    this.renderer.setStyle(button, 'transition', 'all 0.3s ease');
+    this.renderer.setStyle(button, 'transition', 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)');
+    this.renderer.setStyle(button, 'z-index', '9999');
   }
 
   triggerConfetti() {

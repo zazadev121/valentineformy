@@ -66,6 +66,12 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
           <span class="icon">🎁</span>
           <span class="text">???</span>
         </a>
+
+        <!-- Mobile Scroll Hint -->
+        <div class="scroll-hint">
+          <span>გასქროლე</span>
+          <span class="arrow">↓</span>
+        </div>
       </div>
     </nav>
   `,
@@ -192,6 +198,10 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
           }
         }
       }
+
+      .scroll-hint {
+        display: none;
+      }
     }
 
     @media (max-width: 768px) {
@@ -242,6 +252,29 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
       .nav-links a {
         padding: 12px 20px;
         font-size: 1rem;
+      }
+
+      .scroll-hint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 20px 0 10px;
+        color: var(--primary-color);
+        font-family: var(--font-serif);
+        font-weight: bold;
+        opacity: 0.6;
+        animation: bounce 2s infinite;
+
+        .arrow {
+          font-size: 1.2rem;
+        }
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
       }
     }
   `]
