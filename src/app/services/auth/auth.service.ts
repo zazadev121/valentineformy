@@ -23,8 +23,14 @@ export class AuthService {
 
   // Verify name and authenticate
   authenticate(name: string): boolean {
-    const correctName = 'mariam';
-    if (name.toLowerCase().trim() === correctName) {
+    const acceptedNames = [
+      'მარი', 'მარიამ', 'მარიამი', 'მარიამო',  // Georgian variations
+      'mary', 'mariam', 'mari', 'maro'          // English variations
+    ];
+    
+    const normalizedName = name.toLowerCase().trim();
+    
+    if (acceptedNames.some(acceptedName => normalizedName === acceptedName.toLowerCase())) {
       localStorage.setItem(this.AUTH_KEY, 'true');
       this.authenticatedSubject.next(true);
       return true;

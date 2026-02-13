@@ -58,6 +58,11 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
+    path: 'future',
+    loadComponent: () => import('./pages/future-page/future-page.component').then(m => m.FuturePageComponent),
+    canActivate: [authGuard]
+  },
+  {
     path: '**',
     redirectTo: ''
   }

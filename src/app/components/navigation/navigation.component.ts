@@ -49,6 +49,10 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
           <span class="icon">🌈</span>
           <span class="text">შენი ფერი</span>
         </a>
+        <a routerLink="/future" routerLinkActive="active" (click)="closeMenu()">
+          <span class="icon">🏰</span>
+          <span class="text">ჩვენი მომავალი</span>
+        </a>
         <a routerLink="/final" routerLinkActive="active" (click)="closeMenu()">
           <span class="icon">💌</span>
           <span class="text">ბოლო შეტყობინება</span>
