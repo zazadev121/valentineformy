@@ -39,9 +39,8 @@ export class AuthService {
 
   // Unlock secret page with birthdate
   unlockSecret(input: string): boolean {
-    // You'll need to replace this with your actual birthdate
-    // Format: "mariam" + "DDMMYYYY" (e.g., "mariam15031995")
-    const secretCode = 'mariam'; // TODO: Add your birthdate
+    // Mariam's birthdate: May 1, 2010 (01052010)
+    const secretCode = 'mariam01052010';
     
     if (input.toLowerCase().trim() === secretCode.toLowerCase()) {
       localStorage.setItem(this.SECRET_KEY, 'true');
