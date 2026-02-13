@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+// Deployment Refresh: Multi-page routing, interactive pages, and flexible authentication updated.
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
