@@ -1,5 +1,10 @@
 main {
   width: 100%;
+  min-height: 100vh;
+
+  &.with-nav {
+    padding-top: 70px; // Space for fixed navigation
+  }
   overflow-x: hidden;
 }
 

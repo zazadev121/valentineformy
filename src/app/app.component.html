@@ -1,23 +1,15 @@
-<main>
-  <app-hero></app-hero>
-  <app-love-story></app-love-story>
-  <app-love-letter></app-love-letter>
-  <app-reasons></app-reasons>
-  <app-gallery></app-gallery>
-  
-  <app-love-quiz></app-love-quiz>
-  
-  <!-- New Valentine Question Section -->
-  <app-valentine-question></app-valentine-question>
+<!-- Navigation (hidden on security gate) -->
+<app-navigation *ngIf="showNavigation"></app-navigation>
 
-  <app-final-message></app-final-message>
+<!-- Page content -->
+<main [class.with-nav]="showNavigation">
+  <router-outlet></router-outlet>
 </main>
 
-<!-- Floating Music Player -->
+<!-- Global components -->
 <app-music-player></app-music-player>
-
 <app-click-to-start (onStart)="onStart()"></app-click-to-start>
 
-<footer class="footer">
+<footer class="footer" *ngIf="showNavigation">
   <p>Made with ❤️ for Mariam</p>
 </footer>
