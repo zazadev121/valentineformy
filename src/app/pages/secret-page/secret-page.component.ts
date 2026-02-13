@@ -77,6 +77,7 @@ import { AuthService } from '../../services/auth/auth.service';
     </div>
   `,
   styles: [`
+    @use "sass:math";
     .secret-page {
       min-height: 100vh;
       display: flex;
@@ -276,7 +277,6 @@ import { AuthService } from '../../services/auth/auth.service';
       pointer-events: none;
 
       .sparkle {
-        @use "sass:math";
         position: absolute;
         width: 4px;
         height: 4px;

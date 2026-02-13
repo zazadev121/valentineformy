@@ -118,6 +118,7 @@ interface DateOption {
     </div>
   `,
   styles: [`
+    @use "sass:math";
     .date-night-page {
       min-height: 100vh;
       display: flex;
@@ -496,7 +497,6 @@ interface DateOption {
       overflow: hidden;
 
       .heart {
-        @use "sass:math";
         position: absolute;
         font-size: 2rem;
         opacity: 0.3;

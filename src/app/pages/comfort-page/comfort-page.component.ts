@@ -58,6 +58,7 @@ import { CommonModule } from '@angular/common';
     </div>
   `,
   styles: [`
+    @use "sass:math";
     .comfort-page {
       min-height: 100vh;
       display: flex;
@@ -206,7 +207,6 @@ import { CommonModule } from '@angular/common';
       pointer-events: none;
 
       .warm-heart {
-        @use "sass:math";
         position: absolute;
         font-size: 2.5rem;
         opacity: 0.6;
