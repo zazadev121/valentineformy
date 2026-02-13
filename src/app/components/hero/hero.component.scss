@@ -1,0 +1,148 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, var(--bg-gradient-start), var(--bg-gradient-end));
+
+  .hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 5rem;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      text-shadow: 0 4px 10px rgba(201, 24, 74, 0.2);
+      
+      @media (max-width: 768px) {
+        font-size: 3rem;
+      }
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+
+    .cta-button {
+      position: relative;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
+      }
+
+      .glow {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: 0.5s;
+      }
+
+      &:hover .glow {
+        left: 100%;
+        transition: 0.5s;
+      }
+    }
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .mouse {
+      width: 30px;
+      height: 50px;
+      border: 2px solid var(--primary-color);
+      border-radius: 20px;
+      position: relative;
+
+      .wheel {
+        width: 6px;
+        height: 6px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scrollWheel 2s infinite;
+      }
+    }
+  }
+}
+
+@keyframes scrollWheel {
+  0% { top: 10px; opacity: 1; }
+  100% { top: 30px; opacity: 0; }
+}
+
+/* Dynamic Heart Shape Styling via ::before/::after or SVG background */
+::ng-deep .heart-shape {
+  position: absolute;
+  background-color: var(--primary-color);
+  display: inline-block;
+  opacity: 0.5;
+  animation: floatUp linear infinite;
+  
+  /* Create heart shape using pseudo-elements logic implemented via clip-path or simple squares for now */
+  /* Actually, easiest pure CSS heart: */
+  width: 20px;
+  height: 20px;
+  transform: rotate(-45deg);
+  background: var(--secondary-color);
+  
+  &::before, &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  &::before {
+    top: -50%;
+    left: 0;
+  }
+  
+  &::after {
+    top: 0;
+    left: 50%;
+  }
+}

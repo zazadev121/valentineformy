@@ -1,0 +1,30 @@
+<section class="memory-game-section container">
+  <h2>იპოვე წყვილები და მოიგე ჩემი გული! 💖</h2>
+  
+  <div class="game-board">
+    <div 
+      class="card" 
+      *ngFor="let card of cards" 
+      [class.flipped]="card.flipped" 
+      [class.matched]="card.matched"
+      (click)="flipCard(card)"
+    >
+      <div class="card-inner">
+        <div class="card-front">
+          ❤️
+        </div>
+        <div class="card-back">
+          <img [src]="card.image" alt="Memory Card">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="victory-overlay" *ngIf="isGameOver">
+    <div class="glass-card victory-card">
+      <h3>შენ მოიგე! 🎉</h3>
+      <p>შენ ყოველთვის იგებ ჩემს გულს! მიყვარხარ! ❤️</p>
+      <button (click)="startNewGame()">კიდევ ვითამაშოთ? 🔄</button>
+    </div>
+  </div>
+</section>

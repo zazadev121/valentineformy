@@ -1,0 +1,20 @@
+<section class="final-section">
+  <div class="content">
+    <h2 class="main-msg">მარიამ, გილოცავ ვალენტინობის დღეს ❤️</h2>
+    <p class="sub-msg">მინდა იცოდე, რომ ჩემი გული ყოველთვის შენთან იქნება.</p>
+    
+    <div class="pulse-heart">
+      ❤️
+    </div>
+
+    <div class="secret-area">
+      <button *ngIf="!showSecret" (click)="revealSecret()" class="secret-btn">
+        დააჭირე აქ
+      </button>
+      
+      <div *ngIf="showSecret" class="secret-msg fade-in">
+        I Love You Forever ❤️
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section class="gallery-section container">
+  <h2 class="section-title">ჩემი Fav ფოტოები ჩემო სიცოცხლეეე💖💖💖💖</h2>
+  
+  <div class="gallery-grid">
+    <div class="gallery-item glass-card" *ngFor="let img of images">
+      <div class="image-wrapper">
+        <img [src]="img.src" [alt]="img.caption" loading="lazy" (error)="handleImageError($event)">
+        <!-- Fallback div shown via CSS if img is hidden -->
+        <div class="placeholder-text">📷 {{ img.caption }}</div>
+      </div>
+      <div class="caption">
+        <p>{{ img.caption }}</p>
+      </div>
+    </div>
+  </div>
+</section>

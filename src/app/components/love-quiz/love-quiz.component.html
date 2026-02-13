@@ -1,0 +1,60 @@
+<section class="quiz-section container">
+  <h2>სიყვარულის ვიქტორინა 💘</h2>
+  <p class="subtitle">უპასუხე კითხვებს და გახსენი ჩვენი ფოტოები!</p>
+
+  <!-- Quiz Active -->
+  <div class="quiz-container glass-card" *ngIf="!quizCompleted && !showReward">
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="(currentQuestionIndex / questions.length) * 100"></div>
+    </div>
+    
+    <div class="question-box fade-in-up">
+      <h3>{{ questions[currentQuestionIndex].text }}</h3>
+      
+      <div class="options-grid">
+        <button 
+          *ngFor="let option of questions[currentQuestionIndex].options; let i = index"
+          class="option-btn"
+          [class.selected]="selectedOption === i"
+          [class.correct]="isCorrect === true && selectedOption === i"
+          [class.wrong]="isCorrect === false && selectedOption === i"
+          (click)="checkAnswer(i)"
+        >
+          {{ option }}
+        </button>
+      </div>
+      
+      <p *ngIf="isCorrect === false" class="try-again">არა, კიდევ სცადე... 🥺</p>
+    </div>
+  </div>
+
+  <!-- Reward / Unlocked Photo -->
+  <div class="reward-container glass-card fade-in-up" *ngIf="showReward && !quizCompleted">
+    <h3>სწორია! 🎉</h3>
+    <div class="reward-photo">
+      <!-- Fallback added inline -->
+      <img 
+        [src]="questions[currentQuestionIndex].unlockedImage" 
+        alt="Reward"
+        onerror="this.style.display='none'; this.parentElement.classList.add('fallback')"
+      >
+      <div class="fallback-text">📸 ფოტო: {{questions[currentQuestionIndex].unlockedMessage}}</div>
+    </div>
+    <p class="reward-message">{{ questions[currentQuestionIndex].unlockedMessage }}</p>
+    <button class="next-btn" (click)="nextQuestion()">შემდეგი ❤️</button>
+  </div>
+
+  <!-- Quiz Completed -->
+  <div class="completion-container glass-card fade-in-up" *ngIf="quizCompleted">
+    <h3>გილოცავ! შენ ყველა კითხვა გამოიცანი! 🏆</h3>
+    <p>შენ ჩემთვის ყველაზე ჭკვიანი და ლამაზი ხარ! მიყვარხარ! ❤️</p>
+    
+    <div class="all-photos-grid">
+      <div *ngFor="let q of questions" class="mini-photo">
+        <img [src]="q.unlockedImage" alt="Unlocked">
+      </div>
+    </div>
+    
+    <button class="restart-btn" (click)="restartQuiz()">თავიდან ვითამაშოთ? 🔄</button>
+  </div>
+</section>

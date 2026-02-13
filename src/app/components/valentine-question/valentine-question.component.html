@@ -1,0 +1,22 @@
+<section class="valentine-question-section">
+  <div class="container" *ngIf="!accepted">
+    <h2 class="question">მარიამ, იქნები ჩემი ვალენტინი? 🌹</h2>
+    
+    <div class="actions">
+      <button class="btn-yes" (click)="onYesClick()" [disabled]="loading">
+        <span *ngIf="!loading">დიახ! ❤️</span>
+        <span *ngIf="loading">...</span>
+      </button>
+      
+      <button class="btn-no" #noBtn (mouseenter)="onNoHover()" (click)="onNoHover()">
+        არა 💔
+      </button>
+    </div>
+  </div>
+
+  <div class="success-message fade-in" *ngIf="accepted">
+    <h1>URAAA!! 🎉🎉🎉</h1>
+    <p>შენ ჩემი დღე გააბედნიერე! ❤️</p>
+    <div class="big-heart">💖</div>
+  </div>
+</section>

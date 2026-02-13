@@ -1,0 +1,13 @@
+<section class="reasons-section container">
+  <h2 class="section-title">რატომ მიყვარხარ შენ</h2>
+  
+  <div class="cards-grid">
+    <div class="glass-card reason-card" *ngFor="let reason of reasons; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+      <div class="card-content">
+        <div class="icon">❤️</div>
+        <h3>{{ reason.title }}</h3>
+        <p>{{ reason.text }}</p>
+      </div>
+    </div>
+  </div>
+</section>

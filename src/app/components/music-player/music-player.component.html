@@ -1,0 +1,9 @@
+<div class="music-player-container">
+  <button class="music-btn" (click)="togglePlay()" [class.playing]="isPlaying">
+    <span *ngIf="!isPlaying">🎵 Play Music</span>
+    <span *ngIf="isPlaying">⏸ Pause Music</span>
+  </button>
+  
+  <!-- Hidden YouTube Player -->
+  <div id="youtube-player"></div>
+</div>
